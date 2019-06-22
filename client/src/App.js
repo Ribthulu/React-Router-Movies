@@ -1,4 +1,7 @@
+/*jshint esversion: 6 */
+
 import React, { Component } from 'react';
+import { Route, Link } from "react-router-dom";
 
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
@@ -22,7 +25,10 @@ export default class App extends Component {
     return (
       <div>
         <SavedList list={this.state.savedList} />
-        <div>Replace this Div with your Routes</div>
+        <div>
+          <Route path="/movieList" component={MovieList} />
+          <Route path="/movies/:id" Component={Movie} />
+        </div>
       </div>
     );
   }
