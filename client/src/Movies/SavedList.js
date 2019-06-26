@@ -1,3 +1,6 @@
+/*jshint esversion: 6 */
+
+import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 
 export default class SavedList extends Component {
@@ -12,7 +15,10 @@ export default class SavedList extends Component {
         {this.props.list.map(movie => (
           <span className="saved-movie">{movie.title}</span>
         ))}
-        <div className="home-button">Home</div>
+
+        <Link to='/movielist'>
+          <div className="home-button">Home</div>
+        </Link>
       </div>
     );
   }
